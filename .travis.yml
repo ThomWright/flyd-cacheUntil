@@ -7,3 +7,11 @@ notifications:
   email:
     on_success: never
     on_failure: always
+deploy:
+  provider: npm
+  email: npm@thomwright.co.uk
+  api_key:
+    secure: UFZNKhHtJJNxaa5YV0tgA7Ai03/8PBSFwCWeHJOxSv8ehgQ/Wy2iyWGIBgR+nREsTTqnNyjDbTjLdD3Ns0bGjbkrjQAY6nREr6BkANSreM5oqFIo25yzk5TFf2iTSQXVtXzJtUuDWdEAn+mLBtnp7ykEO+YTy480EQcu5/7ICcC8K5nQcUnqhUXaM2dQbgJzqS6MN7ucrYO6CetkfXedKG+ZUzYDfuRccY+DKh7i2QKO28ll2GNMO62kAUhOd1NEqcm3xLxH5RC6DPmKijfHOIWePm7y2fLTAbvsjFpSJyw8yLC+p+UVcD+G0AnnUwtABjFmMTYKjeigOvA7VheneMeuFjTgKSq0V53IYWpQOhKpsjIYLDTzL796qv2tOuphc+YUxZeMBwF3oeA7VJzyfO+fB40WmVfYRIs7PEiNqT6pMP+R9MFTXFX5QSLVClTdnBuvGwrbCg1ppjVHcdE6zHIrZtXyqH4TyeAmawahoRMaVwrT8nADnsQikECV0vZJ1jk+/00beQmLuuh4Kzs8kCJ8xK1rPJ3JGHgOjkiNlFVEdtkQ/FqMW8Nq1YMBPqQECrSwNZENVQYaVLAr34HV36duIeo27aKALFD9JrW/gzGbPbqDl8h45exVenxZAGURTDVX9w5riaPctxAxla1zkfGlwihIJ6KUh6sAt6Lkq9U=
+  on:
+    tags: true
+    repo: ThomWright/flyd-cacheUntil
