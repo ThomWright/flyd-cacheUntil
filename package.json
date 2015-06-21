@@ -1,6 +1,6 @@
 {
   "name": "flyd-cacheuntil",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Cache a stream's output until triggered by another stream.",
   "main": "dist/index.js",
   "scripts": {
