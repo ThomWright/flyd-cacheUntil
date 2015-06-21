@@ -1,0 +1,41 @@
+{
+  "name": "flyd-cache",
+  "version": "0.1.1",
+  "description": "Cache a stream's output until triggered by another stream.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf dist && babel src --out-dir dist --optional es7.objectRestSpread --optional runtime --ignore \"__tests__\"",
+    "lint": "eslint src/",
+    "mocha": "find ./src -wholename \"./*__tests__/*\" | xargs mocha -R spec --require test-setup",
+    "test": "npm run lint && npm run mocha",
+    "prepublish": "npm test && npm run build && npm shrinkwrap",
+    "postpublish": "rm npm-shrinkwrap.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThomWright/flyd-cache"
+  },
+  "keywords": [
+    "flyd",
+    "cache",
+    "caching"
+  ],
+  "author": "Thom Wright <npm@thomwright.co.uk> (http://thomwright.co.uk/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ThomWright/flyd-cache/issues"
+  },
+  "homepage": "https://github.com/ThomWright/flyd-cache",
+  "dependencies": {
+    "flyd": "^0"
+  },
+  "devDependencies": {
+    "babel": "^5.4.7",
+    "babel-eslint": "^3.1.9",
+    "babel-runtime": "^5.4.7",
+    "chai": "^3",
+    "eslint": "^0",
+    "mocha": "^2.2.5",
+    "rimraf": "^2.3.4"
+  }
+}
