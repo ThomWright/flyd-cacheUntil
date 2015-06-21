@@ -1,5 +1,5 @@
 {
-  "name": "flyd-cache",
+  "name": "flyd-cacheuntil",
   "version": "0.1.1",
   "description": "Cache a stream's output until triggered by another stream.",
   "main": "dist/index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ThomWright/flyd-cache"
+    "url": "https://github.com/ThomWright/flyd-cacheUntil"
   },
   "keywords": [
     "flyd",
@@ -23,9 +23,9 @@
   "author": "Thom Wright <npm@thomwright.co.uk> (http://thomwright.co.uk/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ThomWright/flyd-cache/issues"
+    "url": "https://github.com/ThomWright/flyd-cacheUntil/issues"
   },
-  "homepage": "https://github.com/ThomWright/flyd-cache",
+  "homepage": "https://github.com/ThomWright/flyd-cacheUntil",
   "dependencies": {
     "flyd": "^0"
   },
