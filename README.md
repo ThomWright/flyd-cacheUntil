@@ -29,7 +29,7 @@ flyd.on(x => {
 stream(1)(2)(3)(4)(5);
 trigger(true);
 
-[stream('a')('b')('c')('d')('e');
+stream('a')('b')('c')('d')('e');
 trigger(true);
 
 // Output: List [ 1, 2, 3, 4, 5 ]
