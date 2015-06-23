@@ -11,31 +11,13 @@ describe('connect', () => {
     const trigger = flyd.stream();
     const cachedStream = cache(stream).until(trigger);
 
-    [1, 2, 3, 4, 5]
-      .forEach(n => stream(n));
+    stream(1)(2)(3)(4)(5);
 
     flyd.on(x => {
-      expect(x).to.deep.equal([1, 2, 3, 4, 5]);
+      expect(x.toJS()).to.deep.equal([1, 2, 3, 4, 5]);
     }, cachedStream);
 
-    trigger('something');
-  });
-
-  it('should cache before the trigger is specified', () => {
-    const stream = flyd.stream();
-    const caching = cache(stream);
-
-    [1, 2, 3, 4, 5]
-      .forEach(n => stream(n));
-
-    const trigger = flyd.stream();
-    const cachedStream = caching.until(trigger);
-
-    flyd.on(x => {
-      expect(x).to.deep.equal([1, 2, 3, 4, 5]);
-    }, cachedStream);
-
-    trigger('something');
+    trigger(true);
   });
 
   it('should empty the cache after being triggered', () => {
@@ -43,18 +25,14 @@ describe('connect', () => {
     const trigger = flyd.stream();
     const cachedStream = cache(stream).until(trigger);
 
-    [1, 2, 3, 4, 5]
-      .forEach(n => stream(n));
+    stream(1)(2)(3)(4)(5);
+    trigger(true);
 
-    trigger('something');
-
-    ['a', 'b', 'c', 'd', 'e']
-      .forEach(n => stream(n));
-
-    trigger('something');
+    stream('a')('b')('c')('d')('e');
+    trigger(true);
 
     flyd.on(x => {
-      expect(x).to.deep.equal(['a', 'b', 'c', 'd', 'e']);
+      expect(x.toJS()).to.deep.equal(['a', 'b', 'c', 'd', 'e']);
     }, cachedStream);
   });
 });

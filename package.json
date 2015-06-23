@@ -27,7 +27,9 @@
   },
   "homepage": "https://github.com/ThomWright/flyd-cacheUntil",
   "dependencies": {
-    "flyd": "^0"
+    "flyd-sampleon": "^1.0.3",
+    "flyd-scanmerge": "0.0.3",
+    "immutable": "^3.7.4"
   },
   "devDependencies": {
     "babel": "^5.4.7",
@@ -35,6 +37,7 @@
     "babel-runtime": "^5.4.7",
     "chai": "^3",
     "eslint": "^0",
+    "flyd": "^0.1.12",
     "mocha": "^2.2.5",
     "rimraf": "^2.3.4"
   }

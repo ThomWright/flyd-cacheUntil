@@ -1,20 +1,24 @@
-import flyd from 'flyd';
+import sampleOn from 'flyd-sampleon';
+import scanMerge from 'flyd-scanmerge';
+import Immutable from 'immutable';
 
-export default function(stream) {
-  let cache = [];
-
-  flyd.on((x) => {
-    cache.push(x);
-  }, stream);
+export default function(inputStream) {
 
   return {
     until: (trigger) => {
-      const outputStream = flyd.stream();
-      flyd.on(() => {
-        outputStream(cache);
-        cache = [];
-      }, trigger);
-      return outputStream;
+      return sampleOn(trigger,
+        scanMerge([
+          [inputStream, (cache, e) => {
+            return cache.push(e);
+          }],
+
+          [trigger, () => {
+            return new Immutable.List();
+          }]
+        ],
+        new Immutable.List()
+        )
+      );
     }
   };
 }
