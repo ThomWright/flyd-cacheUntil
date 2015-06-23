@@ -26,14 +26,10 @@ flyd.on(x => {
   console.log('Output:', x.toJS());
 }, cachedStream);
 
-[1, 2, 3, 4, 5]
-  .forEach(n => stream(n));
-
+stream(1)(2)(3)(4)(5);
 trigger(true);
 
-['a', 'b', 'c', 'd', 'e']
-  .forEach(n => stream(n));
-
+[stream('a')('b')('c')('d')('e');
 trigger(true);
 
 // Output: List [ 1, 2, 3, 4, 5 ]
