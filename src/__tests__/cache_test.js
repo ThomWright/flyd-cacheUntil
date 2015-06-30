@@ -35,4 +35,19 @@ describe('connect', () => {
       expect(x.toJS()).to.deep.equal(['a', 'b', 'c', 'd', 'e']);
     }, cachedStream);
   });
+
+  it('should have a more functional API', () => {
+    const cacheUntil = cache;
+    const stream = flyd.stream();
+    const trigger = flyd.stream();
+    const cachedStream = cacheUntil(trigger, stream);
+
+    stream(1)(2)(3)(4)(5);
+
+    flyd.on(x => {
+      expect(x.toJS()).to.deep.equal([1, 2, 3, 4, 5]);
+    }, cachedStream);
+
+    trigger(true);
+  });
 });

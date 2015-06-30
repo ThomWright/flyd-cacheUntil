@@ -17,10 +17,14 @@ Cache a stream's output until triggered by another stream. Returns an [Immutable
 ```javascript
 import flyd from 'flyd';
 import cache from 'flyd-cacheuntil';
+/* or */
+import cacheUntil from 'flyd-cacheuntil';
 
 const stream = flyd.stream();
 const trigger = flyd.stream();
 const cachedStream = cache(stream).until(trigger);
+/* or */
+const cachedStream = cacheUntil(trigger, stream);
 
 flyd.on(x => {
   console.log('Output:', x.toJS());
