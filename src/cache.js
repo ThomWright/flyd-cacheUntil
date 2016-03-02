@@ -1,19 +1,21 @@
 import sampleOn from 'flyd-sampleon';
 import scanMerge from 'flyd-scanmerge';
-import Immutable from 'immutable';
 
 const cacheUntil = (trigger, inputStream) => {
   return sampleOn(trigger,
     scanMerge([
       [inputStream, (cache, e) => {
-        return cache.push(e);
+        return [
+          ...cache,
+          e
+        ];
       }],
 
       [trigger, () => {
-        return new Immutable.List();
+        return [];
       }]
     ],
-    new Immutable.List()
+    []
     )
   );
 };

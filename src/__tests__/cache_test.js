@@ -14,7 +14,7 @@ describe('connect', () => {
     stream(1)(2)(3)(4)(5);
 
     flyd.on(x => {
-      expect(x.toJS()).to.deep.equal([1, 2, 3, 4, 5]);
+      expect(x).to.deep.equal([1, 2, 3, 4, 5]);
     }, cachedStream);
 
     trigger(true);
@@ -32,7 +32,7 @@ describe('connect', () => {
     trigger(true);
 
     flyd.on(x => {
-      expect(x.toJS()).to.deep.equal(['a', 'b', 'c', 'd', 'e']);
+      expect(x).to.deep.equal(['a', 'b', 'c', 'd', 'e']);
     }, cachedStream);
   });
 
@@ -45,7 +45,7 @@ describe('connect', () => {
     stream(1)(2)(3)(4)(5);
 
     flyd.on(x => {
-      expect(x.toJS()).to.deep.equal([1, 2, 3, 4, 5]);
+      expect(x).to.deep.equal([1, 2, 3, 4, 5]);
     }, cachedStream);
 
     trigger(true);

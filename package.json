@@ -28,14 +28,14 @@
   "homepage": "https://github.com/ThomWright/flyd-cacheUntil",
   "dependencies": {
     "flyd-sampleon": "^1.0.3",
-    "flyd-scanmerge": "0.0.3",
-    "immutable": "^3.7.4"
+    "flyd-scanmerge": "0.0.3"
   },
   "devDependencies": {
     "babel": "^5.4.7",
-    "babel-eslint": "^3.1.9",
+    "babel-eslint": "^4.1.1",
     "chai": "^3",
-    "eslint": "^0",
+    "eslint": "^2.2.0",
+    "eslint-config-circuitsim": "^0.2",
     "flyd": "^0.1.12",
     "mocha": "^2.2.5",
     "rimraf": "^2.3.4"
